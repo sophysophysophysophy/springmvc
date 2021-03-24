@@ -9,11 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
+//@WebServlet의 속성 값을 통해 해당 Servlet과 매핑될 URL 패턴을 지정한다.
 @WebServlet(name = "requestHeaderServlet", urlPatterns = "/request-header")
 public class RequestHeaderServlet extends HttpServlet {
 
     @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) { //throws ServletException, IOException {
+
+//    ctrl + t : extract method 가능..!
         printStartLine(request);
         printHeaders(request);
         printHeaderUtils(request);
@@ -41,6 +44,7 @@ public class RequestHeaderServlet extends HttpServlet {
     private void printHeaders(HttpServletRequest request) {
         System.out.println("--- Headers - start ---");
 
+//        예전 버전
 /*
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
@@ -50,7 +54,7 @@ public class RequestHeaderServlet extends HttpServlet {
 */
 
         request.getHeaderNames().asIterator()
-                .forEachRemaining(headerName -> System.out.println(headerName + ": " + headerName));
+                .forEachRemaining(headerName -> System.out.println("headerName : " + headerName));
 
         System.out.println("--- Headers - end ---");
         System.out.println();

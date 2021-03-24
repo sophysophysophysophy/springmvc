@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+//@WebServlet의 속성 값을 통해 해당 Servlet과 매핑될 URL 패턴을 지정한다.
 // name, urlPatterns는 유일값이어야 함 (겹치면 안됨) 
 @WebServlet(name = "helloServlet", urlPatterns = "/hello")
 public class HelloServlet extends HttpServlet {     //servlet method는 httpservlet을 상속받아야 함
