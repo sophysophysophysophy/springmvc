@@ -46,6 +46,7 @@ public class ResponseHeaderServlet extends HttpServlet {
     private void cookie(HttpServletResponse response) {
         //Set-Cookie: myCookie=good; Max-Age=600;
         //response.setHeader("Set-Cookie", "myCookie=good; Max-Age=600");
+//        cookie 객체 사용으로 편리하게 set 가능
         Cookie cookie = new Cookie("myCookie", "good");
         cookie.setMaxAge(600); //600초
         response.addCookie(cookie);
