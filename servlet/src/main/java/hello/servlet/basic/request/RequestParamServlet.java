@@ -36,6 +36,9 @@ public class RequestParamServlet extends HttpServlet {
         System.out.println("age = " + age);
         System.out.println();
 
+//        하나의 파라미터명에 여러개 값 보낼 수 있다.
+//        내부 우선순위에 의해 순서 정해져서 return
+//        여러가지 있으면 getParameterValues로 꺼내면 됨. 단일로 꺼내면 내부 우선순위에 의해 첫번째 값만 반환
         System.out.println("[이름이 같은 복수 파라미터 조회]");
         String[] usernames = request.getParameterValues("username");
         for (String name : usernames) {

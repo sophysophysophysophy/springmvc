@@ -25,6 +25,7 @@ public class RequestBodyJsonServlet extends HttpServlet {
 
         System.out.println("messageBody = " + messageBody);
 
+//        json library ( jackson) : 변환 제공
         HelloData helloData = objectMapper.readValue(messageBody, HelloData.class);
 
         System.out.println("helloData.username = " + helloData.getUsername());
