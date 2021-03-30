@@ -7,5 +7,6 @@ import java.io.IOException;
 
 public interface ControllerV1 {
 
+//    servlet 과 모양이 같은 method를 생성
     void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }
